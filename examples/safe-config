@@ -1,0 +1,84 @@
+#############################################################################
+#
+# $Id$
+# Purpose ...............: Safe Cracker door configuration file
+#
+#############################################################################
+# Copyright (C) 2003 
+#   
+# Michiel Broek		FIDO:		2:280/2802
+# Beekmansbos 10
+# 1971 BV IJmuiden
+# the Netherlands
+#
+# This file is part of Next User door for Unix.
+#
+# This door is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2, or (at your option) any
+# later version.
+#
+# Nextuser Door is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with Nextuser Door; see the file COPYING.  If not, write to the Free
+# Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+#############################################################################
+
+#
+# Logfile location
+#
+logfile		/opt/mbse/log/safecrack.log
+
+#
+# Name of the bbs
+#
+bbsname		BBS/Infobank IJmuiden
+
+#
+# Door configuration
+#
+# First the combination to "crack"
+#
+digit1		1
+digit2		2
+digit3		3
+
+#
+# Howmany tries are allowed for each user
+#
+maxtries	4
+
+#
+# The number range, 1 to n
+#
+maxnumber	20
+
+#
+# Auto number generator, 0 or 1
+#
+numgenerator	0
+
+#
+# The prize to win.
+#
+prize		Free Access for a year!
+
+#
+# The welcome screens without .asc or .ans extensions
+#
+welcome		/opt/mbse/english/txtfiles/safewel
+
+#
+# The safe opened screens without .asc or .ans extensions
+#
+opened		/opt/mbse/english/txtfiles/safeopen
+
+#
+# The directory to store user data
+#
+workdir		/opt/mbse/var
+

@@ -1,0 +1,36 @@
+   $Id$
+
+
+	Safe Cracker Door for Unix.
+	---------------------------
+
+This is a safe cracker door game for Unix. To compile and install this
+package you need doorlib installed on your system. The safe-door binary
+should be called with the full filename and path to the configuration
+file.
+
+
+	Installation of the door in MBSE BBS:
+
+After building, compiling and installing, the binary safe-door is the only file
+that is in place. Copy the safe-config file from the examples direcctory to
+/opt/mbse/etc/safe-config and edit that file to your local configuration.
+
+Then start mbsetup menu 8.3 and open the menu where you want to install
+the safe cracker door in. Edit a menu item:
+
+ 8.3. EDIT MENU ITEM
+
+ 1.  Sel. key  S
+ 2.  Type nr.  7         Run external program in shell
+ 3.  Opt. data /usr/local/bin/safe-door /opt/mbse/etc/safe-config
+               1234567890123456789012345678901234567890123456789012345678901234
+ 4.  Display
+ 5.  Security  0     --------------------------------
+ 6.  Min. age  0                         11. No door.sys No
+ 7.  Password  <null>                    12. Y2K style   No
+ 8.  Lo-colors Normal display color      13. Use Comport No
+ 9.  Hi-colors Bright display color      14. Run nosuid  Yes
+ 10. Autoexec  No                        15. No Prompt   Yes
+
+That's it.
