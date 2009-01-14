@@ -1,0 +1,14 @@
+-= Safe Cracker door v@VERSION@ for Unix =-
+Safe Cracker door is a native Unix door for
+Unix bbs systems. In this little game the user
+needs to crack a safe combination. The safe
+combination can be configured manually or
+created at random. You can make a prize
+available for the winner.
+Needs doorlib 0.9.2 or newer.
+OS: Linux, NetBSD and FreeBSD.
+Originating sites 2:280/2802@fidonet and
+http://www.mbse.dds.nl/mbse/safedoor/
+Copyright by Michiel Broek.
+Released under the terms of the GNU Public
+License.

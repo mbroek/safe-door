@@ -1,0 +1,80 @@
+dnl Process this file with autoconf to produce a configure script.
+dnl $Id$
+
+AC_INIT(src/safe-door.h)
+AM_CONFIG_HEADER(config.h)
+SUBDIRS="examples src"
+AC_SUBST(SUBDIRS)
+
+dnl
+dnl General settings for Safe Cracker Door.
+dnl After changeing the version number, run autoconf!
+dnl
+PACKAGE="safe-door"
+VERSION="0.9.6"
+COPYRIGHT="Copyright (C) 2003-2005 Michiel Broek, All Rights Reserved"
+AC_SUBST(PACKAGE)
+AC_SUBST(VERSION)
+AC_SUBST(COPYRIGHT)
+AC_PREFIX_DEFAULT(/usr/local)
+AC_DEFINE_UNQUOTED(VERSION, "$VERSION")
+AC_DEFINE_UNQUOTED(COPYRIGHT, "$COPYRIGHT")
+
+
+dnl
+dnl Checks for programs.
+dnl
+AC_PROG_CC
+dnl Try to find GNU install
+AC_CHECK_PROG(INSTALL, ginstall, ginstall)
+AC_CHECK_PROG(INSTALL, install, install)
+dnl AC_PROG_MAKE_SET
+AC_CHECK_PROG(TAR, tar, tar)
+
+
+dnl
+dnl Checks for header files.
+dnl
+AC_HEADER_STDC
+CFLAGS="$CFLAGS -Wall -Wshadow -Wwrite-strings -Wstrict-prototypes"
+
+
+dnl
+dnl Additional commandline switches
+dnl
+AC_ARG_ENABLE(debugging,   [  --enable-debugging      Compile for debugging], [ debugging=$enableval ], [ debugging=no ])
+if test "$debugging" = "yes"; then
+    CFLAGS="-O -g -Wall -Wshadow -Wwrite-strings -Wstrict-prototypes"
+else
+    CFLAGS="-O2 -fno-strict-aliasing -Wall -Wshadow -Wwrite-strings -Wstrict-prototypes"
+fi
+
+
+dnl
+dnl Checks for door library
+dnl
+AC_MSG_CHECKING(door library installed)
+pkg-config --exists door
+if test "$?" = "0"; then
+  AC_MSG_RESULT(yes)
+else
+  AC_MSG_ERROR(no)
+fi
+AC_MSG_CHECKING(door library v0.9.2 or newer)
+pkg-config --atleast-version=0.9.2 door
+if test "$?" = "0"; then
+  AC_MSG_RESULT(found)
+else
+  AC_MSG_ERROR(not found)
+fi
+LIBS="$LIBS`pkg-config --libs door`"
+AC_CHECK_HEADERS(door.h)
+
+CFLAGS="$CFLAGS `pkg-config --cflags door`"
+
+AC_OUTPUT(
+	Makefile.global
+	INSTALL
+	FILE_ID.DIZ
+)
+

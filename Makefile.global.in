@@ -1,0 +1,23 @@
+# Compile-time configuration for Safe Cracker door for Unix
+# $Id$
+
+VERSION		= @VERSION@
+PACKAGE		= @PACKAGE@
+
+# for make install, where to put binaries and what owner to set
+SUBDIRS		= @SUBDIRS@
+PREFIX		= @prefix@
+BINDIR		= @prefix@/bin
+ETCDIR		= @prefix@/etc
+DOCDIR		= @prefix@/doc
+VARDIR		= @prefix@/var
+
+INSTALL		= @INSTALL@
+SHELL		= /bin/sh
+ECHO		= echo -e
+CC		= @CC@
+TAR		= @TAR@
+
+CFLAGS		= @CFLAGS@
+LIBS		= @LIBS@
+

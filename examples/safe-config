@@ -1,0 +1,181 @@
+#############################################################################
+#
+# $Id$
+# Purpose ...............: Safe Cracker door configuration file
+#
+#############################################################################
+# Copyright (C) 2003 
+#   
+# Michiel Broek		FIDO:		2:280/2802
+# Beekmansbos 10
+# 1971 BV IJmuiden
+# the Netherlands
+#
+# This file is part of the Safe Cracker door for Unix.
+#
+# This door is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2, or (at your option) any
+# later version.
+#
+# Nextuser Door is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with Nextuser Door; see the file COPYING.  If not, write to the Free
+# Software Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+#############################################################################
+
+#
+# Logfile location, bbs user should have write access to the directory.
+#
+logfile		/usr/local/var/log/safecrack.log
+
+#
+# Name of the bbs
+#
+bbsname		My BBS heaven
+
+#
+# Door configuration
+#
+# First the combination to "crack" if numgenerator is 0.
+#
+digit1		1
+digit2		2
+digit3		3
+
+#
+# Howmany tries are allowed for each user.
+# If numgenerator is 1, use about 25 or so.
+# Use a low number if numgenerator is 0.
+#
+maxtries	4
+
+#
+# The number range, 1 to n
+#
+maxnumber	20
+
+#
+# Auto number generator, 0 or 1.
+# If set to 1, the digits above are not used.
+#
+numgenerator	0
+
+#
+# The prize to win.
+#
+prize		Free Access for a year!
+#
+#prize		Einladung zum Usertreffen!
+#
+# The welcome screens without .asc or .ans extensions
+#
+welcome		/usr/local/etc/safe/safewel
+
+#
+# The safe opened screens without .asc or .ans extensions
+#
+opened		/usr/local/etc/safe/safeopen
+
+#
+# The directory to store user data, the bbs users need write
+# access to this directory!
+#
+workdir		/usr/local/var/safe
+
+#
+# Language prompts.  Uncomment the ones you want. For a multiple
+# language setup, make copies from this file, and call the door
+# with the config file you want.
+#
+yes Y
+no N
+lang1 In the safe lies
+lang2 Do you want to open the safe ? [Y/n]: 
+lang3 Do you want to try again ? [Y/n]: 
+lang4 Please enter three numbers consisting from 1 to 
+lang5 Please enter three combinations.
+lang6 1st Digit: 
+lang7 1st: 
+lang8 Please try again! You must input a number greater than Zero and less than 
+# Empty in english, used in some other languages like "lang8 <digit> lang9"
+lang9 .
+lang10 2nd digit: 
+lang11 2nd: 
+lang12 3rd digit: 
+lang13 3rd: 
+lang14 Left : 
+lang15 Right: 
+lang16 Attempt to open safe with this combination [Y/n]: 
+lang17 You have won the following...
+lang18 Sorry - You didn't open the safe!
+lang19 The safe code was:
+lang20 Please press key to continue
+lang21 THE SAFE IS CURRENTLY LOCKED
+lang22 has cracked the safe.
+lang23 The safe will remain locked until the sysop rewards the user.
+lang24 Maximum trys per day exceeded
+lang25 Press ENTER: 
+
+# Dutch language
+#yes J
+#no N
+#lang1 In de safe ligt 
+#lang2 Wil je de safe kraken ? [J/n]: 
+#lang3 Wil je het opnieuw proberen ? [J/n]: 
+#lang4 Geef drie getallen in tussen de 1 en 
+#lang5 Geef een kombinatie van drie getallen.
+#lang6 1e Cijfer: 
+#lang7 1.: 
+#lang8 Probeer het opnieuw! Het getal moet groter dan nul en kleiner dan 
+#lang9  zijn.
+#lang10 2e Cijfer: 
+#lang11 2.: 
+#lang12 3e Cijfer: 
+#lang13 3.: 
+#lang14 Links : 
+#lang15 Rechts: 
+#lang16 De safe openen met deze kombinatie [J/n]:
+#lang17 Je hebt het volgende gewonnen...
+#lang18 Sorry - je hebt de safe niet gekraakt!
+#lang19 De juiste kombinatie was: 
+#lang20 Druk op een toets om verder te gaan 
+#lang21 DE SAFE IS AL GEKRAAKT
+#lang22 heeft de safe gekraakt.
+#lang23 De safe blijft op slot totdat de kraker beloond is.
+#lang24 Voor vandaag heb je het vaak genoeg geprobeert.
+#lang25 Geef ENTER:
+
+# German language, made by Malte Tychsen
+
+#yes J
+#no N
+#lang1 Im Panzerschrank liegt 
+#lang2 Du willst diesen Panzerschrank knacken ? [J/n]: 
+#lang3 Nochmal probieren ? [J/n]: 
+#lang4 Gib jetzt bitte drei Ziffern ein 1 - 
+#lang5 Gib jetzt bitte Deine Kombination ein.
+#lang6 1. Ziffer: 
+#lang7 1.: 
+#lang8 Versuchs nochmal! Die Ziffer soll groesser als Null und kleiner als 
+#lang9  sein.
+#lang10 2. Ziffer: 
+#lang11 2.: 
+#lang12 3. Ziffer: 
+#lang13 3.: 
+#lang14 Links : 
+#lang15 Rechts: 
+#lang16 mit dieser Kombination jetzt oeffnen   [J/n]: 
+#lang17 Du hast folgendes gewonnen...
+#lang18 Sorry - DAMIT bleibt dieser Panzerschrank zu!
+#lang19 Die richtige Kombination war:
+#lang20 Drueck eine Taste, dann gehts weiter
+#lang21 Diesen Panzerschrank hat schon einer geknackt
+#lang22 hat den Panzerschrank geknackt.
+#lang23 Dieser Panzerschrank bleibt gesperrt bis der Panzerknacker ,,bestraft'' wurde.
+#lang24 Du hast es heute oft genug versucht
+#lang25 Druecken Sie <Enter> um fortzufahren
